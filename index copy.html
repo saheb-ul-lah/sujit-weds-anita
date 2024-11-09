@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sujit & Anita's Wedding Celebration | Nov 22, 2024</title>
+   <link rel="shortcut icon" href="favicon.png" type="image/png">
+   <link href="https://fonts.googleapis.com/css?family=Arvo|Dancing+Script|Playfair+Display:400,700&display=swap" rel="stylesheet">
+   <style>
+      body {
+         background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+         color: #333;
+         font-family: 'Arvo', serif;
+         margin: 0;
+         padding: 0;
+         overflow-x: hidden;
+      }
+
+      .container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 20px;
+      }
+
+      .title h1 {
+         font-size: 5em;
+         color: #e25c67;
+         font-family: 'Dancing Script', cursive;
+         text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+         margin: 0;
+         animation: fadeInDown 2s ease;
+      }
+
+      .title h2 {
+         font-size: 3em;
+         color: #5a4d78;
+         font-family: 'Playfair Display', serif;
+      }
+
+      .title h3 {
+         font-size: 2.5em;
+         color: #5a4d78;
+         font-family: 'Playfair Display', serif;
+      }
+
+      .wrap {
+         text-align: center;
+         padding: 40px 20px;
+         background-color: rgba(255, 255, 255, 0.8);
+         border-radius: 15px;
+         box-shadow: 0 0 20px rgba(0,0,0,0.1);
+         animation: slideIn 1.5s ease-out;
+      }
+
+      .venue, .footer {
+         background-color: #5a4d78;
+         border-radius: 8px;
+         padding: 15px;
+         margin: 10px 0;
+         font-size: 1.2em;
+         color: #fff;
+         font-family: 'Playfair Display', serif;
+         transition: all 0.3s ease;
+      }
+
+      .venue:hover, .footer:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+
+      .actions a {
+         display: inline-block;
+         margin: 10px;
+         padding: 15px 30px;
+         background-color: #d57f7f;
+         color: white;
+         text-decoration: none;
+         font-weight: bold;
+         font-size: 20px;
+         border-radius: 50px;
+         transition: 0.3s ease-in-out;
+         font-family: 'Dancing Script', cursive;
+      }
+
+      .actions a:hover {
+         background-color: #b56969;
+         transform: scale(1.05);
+      }
+
+      .footer p {
+         font-size: 18px;
+         margin-top: 20px;
+         color: #6a2c7e;
+      }
+
+      .footer a {
+         color: #f1e2f2;
+         text-decoration: none;
+         font-weight: bold;
+      }
+
+      @keyframes sakura {
+         0% { transform: translateY(-100%) rotate(0deg); opacity: 0; }
+         50% { opacity: 1; }
+         100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+      }
+
+      .sakura {
+         position: fixed;
+         z-index: 999;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         pointer-events: none;
+      }
+
+      .sakura img {
+         position: absolute;
+         width: 30px;
+         animation: sakura 10s linear infinite;
+      }
+
+      .dance-med {
+         font-family: 'Dancing Script', cursive;
+         font-size: 32px;
+         color: #6a2c7e;
+         margin: 16px;
+         text-align: center;
+      }
+
+      .countdown {
+         font-family: 'Playfair Display', serif;
+         font-size: 2.5em;
+         color: #e25c67;
+         margin-top: 50px;
+      }
+
+      .countdown span {
+         font-size: 1em;
+         color: #5a4d78;
+         font-weight: bold;
+         display: inline-block;
+         margin: 0 15px;
+         text-align: center;
+         padding: 20px;
+         background-color: #ffefd5;
+         border-radius: 8px;
+         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+
+      .additional-section {
+         padding: 50px;
+         background-color: rgba(249, 249, 249, 0.8);
+         margin-top: 50px;
+         border-radius: 15px;
+      }
+
+      .additional-section h2 {
+         font-size: 2.5em;
+         color: #e25c67;
+         font-family: 'Dancing Script', cursive;
+      }
+
+      .additional-section p {
+         font-size: 1.2em;
+         color: #5a4d78;
+         margin-top: 20px;
+         line-height: 1.6;
+      }
+
+      #pre-loader {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(255, 255, 255, 0.9);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         z-index: 9999;
+         opacity: 1;
+         transition: opacity 0.3s ease;
+      }
+
+      #pre-loader button {
+         padding: 15px 30px;
+         font-size: 24px;
+         background-color: #e25c67;
+         color: white;
+         border: none;
+         border-radius: 50px;
+         cursor: pointer;
+         transition: all 0.3s ease;
+         font-family: 'Dancing Script', cursive;
+      }
+
+      #pre-loader button:hover {
+         background-color: #b56969;
+         transform: scale(1.05);
+      }
+
+      #site-content {
+         display: none;
+         opacity: 0;
+         transition: opacity 1s ease-in-out;
+      }
+
+      #site-content.show {
+         display: block;
+         opacity: 1;
+      }
+
+      .invitation-card-section, .video-invitation-section {
+         background-color: rgba(249, 249, 249, 0.8);
+         padding: 50px;
+         margin-top: 50px;
+         border: 2px solid #e25c67;
+         border-radius: 15px;
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .invitation-card-section h2, .video-invitation-section h2 {
+         font-size: 2.5em;
+         color: #e25c67;
+         font-family: 'Dancing Script', cursive;
+      }
+
+      .invitation-card-section img, .video-invitation-section video {
+         width: 100%;
+         max-width: 600px;
+         height: auto;
+         border: 2px solid #e25c67;
+         border-radius: 10px;
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+         margin: 20px 0;
+      }
+
+      .download-invitation {
+         background-color: #e25c67;
+         color: white;
+         border: none;
+         border-radius: 50px;
+         padding: 15px 30px;
+         font-size: 20px;
+         cursor: pointer;
+         transition: all 0.3s ease;
+         font-family: 'Dancing Script', cursive;
+      }
+
+      .download-invitation:hover {
+         background-color: #b56969;
+         transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+         .title h1 {
+            font-size: 3em;
+         }
+
+         .title h3 {
+            font-size: 2em;
+         }
+
+         .countdown {
+            font-size: 2em;
+         }
+
+         .actions a {
+            font-size: 18px;
+            padding: 12px 24px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <div id="pre-loader">
+      <button onclick="openInvitation()">Open Our Wedding Invitation</button>
+   </div>
+
+   <div id="site-content">
+      <div class="sakura">
+         <img src="https://i.imgur.com/dGOOfnA.png" alt="Sakura">
+         <img src="https://i.imgur.com/TCGMNcj.png" alt="Sakura">
+         <img src="https://i.imgur.com/dGOOfnA.png" alt="Sakura">
+         <img src="https://i.imgur.com/TCGMNcj.png" alt="Sakura">
+      </div>
+
+      <div class="container">
+         <div class="wrap">
+            <div class="title">
+               <h1>Sujit</h1>
+               <h2>&</h2>
+               <h1>Anita</h1>
+               <h3>Are Joining Hearts in Holy Matrimony</h3>
+               <p>on <span class="date">22nd of November 2024</span><br>at <span class="place">Abhyathana Bibah Bahor</span><br>Lachit Nagar, Moranhat Town</p>
+            </div>
+
+            <p class="dance-med">Join us for an evening of love, laughter, and happily ever after</p>
+
+            <div class="actions">
+               <a href="https://maps.app.goo.gl/DhhBc9r6nBLtMWPKA" target="_blank">
+                  <div class="venue">See The Venue</div>
+               </a>
+               <a href="#" onclick="downloadInvitation(); return false;">
+                  <div class="venue">Download Invitation Card</div>
+               </a>
+            </div>
+
+            <div class="countdown">
+               <div>
+                  <span id="days">0</span> Days
+                  <span id="hours">0</span> Hours
+                  <span id="minutes">0</span> Minutes
+                  <span id="seconds">0</span> Seconds
+               </div>
+            </div>
+
+            <div class="additional-section">
+               <h2>Our Love Story</h2>
+               <p>Sujit and Anita's journey began with a chance encounter that blossomed into a beautiful friendship. As they spent more time together, they discovered a deep connection that grew stronger with each passing day. Their love story is one of mutual respect, shared dreams, and unwavering support for each other. Now, they are ready to embark on the next chapter of their lives together, surrounded by their loved ones.</p>
+            </div>
+
+            <div class="invitation-card-section">
+               <h2>Our Wedding Invitation</h2>
+               <img src="./assets/wedding_card_image.jpg" alt="Invitation Card">
+               <button class="download-invitation" onclick="downloadInvitation()">Download Invitation Card</button>
+            </div>
+
+            <div class="video-invitation-section">
+               <h2>Watch Our Video Invitation</h2>
+               <video width="100%" controls>
+                  <source src="./assets/wedding_video.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+               </video>
+            </div>
+
+            <p class="footer">
+               We can't wait to celebrate this joyous occasion with you!<br>
+               For any queries, please contact: <a href="tel:+918210050314">+91 8210050314</a>
+            </p>
+         </div>
+      </div>
+   </div>
+
+   <script>
+      function downloadInvitation() {
+         const link = document.createElement('a');
+         link.href = './assets/wedding_card_image.jpg';
+         link.download = 'Sujit_and_Anita_Wedding_Invitation.jpg';
+         document.body.appendChild(link);
+         link.click();
+         document.body.removeChild(link);
+      }
+
+      function updateCountdown() {
+         const weddingDate = new Date('November 22, 2024 00:00:00').getTime();
+         const currentDate = new Date().getTime();
+         const timeRemaining = weddingDate - currentDate;
+
+         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+         const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+         const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+         document.getElementById('days').innerText = days;
+         document.getElementById('hours').innerText = hours;
+         document.getElementById('minutes').innerText = minutes;
+         document.getElementById('seconds').innerText = seconds;
+      }
+
+      setInterval(updateCountdown, 1000);
+
+      function openInvitation() {
+         document.getElementById('pre-loader').style.opacity = 0;
+         setTimeout(function () {
+            document.getElementById('pre-loader').style.display = 'none';
+         }, 300);
+         document.getElementById('site-content').classList.add('show');
+      }
+
+      function animateSakura() {
+         const sakuraImages = document.querySelectorAll('.sakura img');
+         sakuraImages.forEach((img) => {
+            img.style.left = Math.random() * 100 + 'vw';
+            img.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            img.style.opacity = Math.random();
+            img.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+         });
+      }
+
+      setInterval(animateSakura, 10000);
+      animateSakura();
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Wedding Invitation | Nov 29 | Ashirwad Garden, Ranchi</title>
+   <link rel="shortcut icon" href="favicon.png" type="image/png">
+   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Dancing+Script&amp;display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style>
+      /* Keeping the original styles intact */
+      body {
+         background: linear-gradient(to bottom, #ffecd2, #f1e2f2);
+         color: #fff;
+         overflow-x: hidden;
+      }
+
+      .title h1 {
+         font-size: 4em;
+         color: #e25c67;
+         font-family: 'Dancing Script', cursive;
+         animation: fadeInDown 2s ease;
+      }
+
+      .title h3 {
+         font-size: 2.5em;
+         color: #fff;
+      }
+
+      .wrap {
+         text-align: center;
+         padding: 20px;
+         animation: slideIn 1.5s ease-out;
+      }
+
+      .venue,
+      .footer {
+         background-color: #5a4d78;
+         border-radius: 8px;
+         padding: 10px;
+         margin: 5px;
+         font-size: 1.2em;
+         color: #fff;
+         font-family: 'Playfair Display', serif;
+         animation: pulse 1.5s infinite;
+      }
+
+      .actions a div {
+         font-family: 'Playfair Display', serif;
+      }
+
+      .actions a {
+         margin: 10px;
+         padding: 12px 25px;
+         background-color: #d57f7f;
+         color: white;
+         text-decoration: none;
+         font-weight: bold;
+         font-size: 20px;
+         border-radius: 25px;
+         transition: 0.3s ease-in-out;
+         font-family: 'Dancing Script', cursive;
+      }
+
+      .actions a:hover {
+         background-color: #b56969;
+      }
+
+      .footer p {
+         font-size: 16px;
+         margin-top: 20px;
+         color: #6a2c7e;
+      }
+
+      .footer a {
+         color: #f1e2f2;
+         text-decoration: none;
+         font-weight: bold;
+      }
+
+
+      @keyframes sakura {
+         0% {
+            transform: translateY(-100%);
+            opacity: 0.8;
+         }
+
+         100% {
+            transform: translateY(100%);
+            opacity: 0;
+         }
+      }
+
+      .dance-med {
+         font-family: 'Dancing Script', cursive;
+         font-size: 32px;
+         color: #6a2c7e;
+         margin: 16px;
+         text-align: center;
+      }
+
+      .countdown {
+         font-family: 'Dancing Script', cursive;
+         font-size: 3em;
+         color: #e25c67;
+         margin-top: 50px;
+      }
+
+      .countdown span {
+         font-size: 1em;
+         color: #5a4d78;
+         font-weight: bold;
+         display: inline-block;
+         margin: 0 15px;
+         text-align: center;
+         padding: 20px;
+         background-color: #ffefd5;
+         border-radius: 8px;
+      }
+
+      .additional-section {
+         padding: 50px;
+         background-color: #f9f9f9;
+         margin-top: 50px;
+      }
+
+      .additional-section h2 {
+         font-size: 2.5em;
+         color: #e25c67;
+      }
+
+      .additional-section p {
+         font-size: 1.2em;
+         color: #5a4d78;
+         margin-top: 20px;
+      }
+
+      /* Pre-loader styles */
+      #pre-loader {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(255, 255, 255, 0.8);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         z-index: 9999;
+         opacity: 1;
+         transition: opacity 0.3s ease;
+      }
+
+      #pre-loader button {
+         padding: 10px 20px;
+         font-size: 18px;
+         background-color: #e25c67;
+         color: white;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+      }
+
+      #pre-loader button:hover {
+         background-color: #b56969;
+      }
+
+      #site-content {
+         display: none;
+         opacity: 0;
+         transition: opacity 1s ease-in-out;
+      }
+
+      #site-content.show {
+         display: block;
+         opacity: 1;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+         .title h1 {
+            font-size: 3em;
+         }
+
+         .title h3 {
+            font-size: 2em;
+         }
+
+         .countdown {
+            font-size: 2.5em;
+         }
+
+         .actions a {
+            font-size: 1em;
+            padding: 10px 20px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <!-- Pre-loader Screen -->
+   <div id="pre-loader">
+      <button onclick="openInvitation()">Open Invitation</button>
+   </div>
+
+   <!-- Main Content -->
+   <div id="site-content">
+      <img src="./assets/wedding 101.jpg"
+         style="height: auto; width: auto; filter: brightness(50%); position:fixed; z-index: -1; top:0;">
+      <!-- options are
+      https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif -->
+      <img src="https://i.pinimg.com/originals/05/59/94/05599424bb5a1b7819956d0288559697.gif"
+         style="position: absolute; z-index: 999; width: 100%; height: 100%; top: 0; left: 0;">
+      <img src="./assets/img/left.png" alt="left-decoration" class="top-right-decoration"
+         style="transform: scaleX(-1);">
+      <img src="./assets/img/right.png" alt="right-decoration" class="top-left-decoration"
+         style="transform: scaleX(-1);">
+
+      <div class="wrap">
+         <div class="title">
+            <h1 style="color: #fff;">Sujit</h1>
+<h2 style="color: #fff;">&</h2>
+<h1 style="color: #fff;">Anita</h1>
+<h3 style="color: #fff;">Are Getting Married</h3>
+<p style="color: #fff;">on <span class="date" style="color: #fff;">22nd of November 2024</span> at <span class="place" style="color: #fff;">Abhyathana Bibah Bahor</span> @ Lachit Nagar, Moranhat Town</p>
+         </div>
+
+         <p style="color: #fff;" class="dance-med">Dinner & Dancing to follow</p>
+
+         <div class="actions">
+            <a href="https://maps.app.goo.gl/DhhBc9r6nBLtMWPKA" target="_blank">
+               <div class="venue">See The Venue</div>
+            </a>
+            <a href="https://github.com/vinitshahdeo/vinitshahdeo/raw/master/docs/Sonali%20%26%20Gagan.pdf"
+               download="Invitation | 23 Nov | Hope to see you there!">
+               <div class="venue">Download Invitation Card</div>
+            </a>
+         </div>
+
+         <!-- Countdown Section -->
+         <div class="countdown">
+            <div>
+               <span id="days">0</span> Days
+               <span id="hours">0</span> Hours
+               <span id="minutes">0</span> Minutes
+               <span id="seconds">0</span> Seconds
+            </div>
+         </div>
+
+         <!-- Additional Event Details Section -->
+         <div class="additional-section">
+            <h2>Event Details</h2>
+            <p>Come and celebrate the beautiful union of Sujit and Anita. Enjoy a night full of laughter, music, and
+               love.</p>
+         </div>
+
+         <p class="footer">
+            Can't wait to celebrate the auspicious moment with you! <br>
+            Just a ping away for any queries: <a href="tel:+918210050314">+91 8210050314</a>
+         </p>
+
+         <div class="music">
+            <audio src="./assets/mp3/song.mp3" id="my_audio" loop="loop"></audio>
+         </div>
+
+         <p class="happiness">Join us in our happiness!<br>
+            <a href="https://twitter.com/Vinit_Shahdeo" target="_blank" class="twitter"><i
+                  class="fa fa-twitter"></i></a>
+         </p>
+      </div>
+
+   </div>
+
+
+   <!-- Invitation Card Section -->
+   <div class="invitation-card-section"
+      style="background-color: #f9f9f9; padding: 50px; margin-top: 50px; border: 1px solid #e25c67; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      <h2 style="font-size: 2.5em; color: #e25c67;">Invitation Card</h2>
+      <img src="./assets/wedding_card_image.jpg"
+         alt="Invitation Card"
+         style="width: 100%; height: auto; border: 1px solid #e25c67; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      <button class="download-invitation"
+         style="background-color: #e25c67; color: white; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s ease;"
+         onclick="downloadInvitation()">Download Invitation Card</button>
+   </div>
+
+   <!-- Video Invitation Section -->
+   <div class="video-invitation-section"
+      style="background-color: #f9f9f9; padding: 50px; margin-top: 50px; border: 1px solid #e25c67; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      <h2 style="font-size: 2.5em; color: #e25c67;">Video Invitation</h2>
+      <video muted width="100%" height="auto" controls
+         style="border: 1px solid #e25c67; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+         <source src="./assets/wedding video.mp4" type="video/mp4">
+         Your browser does not support the video tag.
+      </video>
+   </div>
+
+   <script>
+      // Download Invitation Function
+      function downloadInvitation() {
+         const link = document.createElement('a');
+         link.href = './assets/wedding_card_image.jpg';
+         link.download = 'Invitation Card';
+         link.click();
+      }
+   </script>
+
+   <script>
+      // Countdown Function
+      function updateCountdown() {
+         const weddingDate = new Date('November 22, 2024 00:00:00').getTime();
+         const currentDate = new Date().getTime();
+         const timeRemaining = weddingDate - currentDate;
+
+         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+         const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+         const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+         document.getElementById('days').innerText = days;
+         document.getElementById('hours').innerText = hours;
+         document.getElementById('minutes').innerText = minutes;
+         document.getElementById('seconds').innerText = seconds;
+      }
+
+      setInterval(updateCountdown, 1000);
+
+      // Pre-loader functionality
+      function openInvitation() {
+         // Hide pre-loader
+         document.getElementById('pre-loader').style.opacity = 0;
+         setTimeout(function () {
+            document.getElementById('pre-loader').style.display = 'none';
+         }, 300);
+         // Show content
+         document.getElementById('site-content').classList.add('show');
+         // Play audio
+         document.getElementById('my_audio').play();
+      }
+   </script>
+</body>
+
+</html>
